@@ -1,12 +1,21 @@
-import { useState } from "react";
+import React from "react";
+import ProductDetailsComponent from "./compoment/productDetailsComponent";
+import ProductListComponent from "./compoment/productListComponent";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
+    <Router>
       <div>
-        <h1>jeeva</h1>
+        <Routes>
+          <Route path="/" element={<ProductListComponent />} />
+          <Route
+            path="/product/:productId"
+            element={<ProductDetailsComponent />}
+          />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 
