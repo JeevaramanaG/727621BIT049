@@ -36,6 +36,7 @@ const ProductsListPage = () => {
         if (!response.ok) {
           throw new Error("Failed to fetch products");
         }
+        console.log(response);
         const data = await response.json();
         setProductsData(data);
       } catch (error) {
